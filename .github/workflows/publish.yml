@@ -3,23 +3,25 @@ name: Publish to GitHub Pages
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2  # Updated to use v2 for improved features and performance
 
       - name: Install Emacs
-        run: sudo apt install emacs-nox --yes
+        run: sudo apt-get update && sudo apt-get install emacs-nox --yes
 
       - name: Build the site
-        run: ./public/build.sh
+        run: chmod +x ./public/build.sh && ./public/build.sh
+        # Ensure the build script is executable
 
       - name: Publish generated content to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          branch: gh-pages
-          folder: public
+          branch: gh-pages  # The target branch for GitHub Pages
+          folder: public  # The folder where your build script outputs the site files
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use the GITHUB_TOKEN for authentication
