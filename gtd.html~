@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-04-07 Sun 19:23 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Life: Getting Things Done</title>
+<meta name="generator" content="Org mode" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">Life: Getting Things Done</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1828b13">1. Capture Tasks</a>
+<ul>
+<li><a href="#org9773bdc">1.1. <span class="done DONE">DONE</span> Methodology to add placeholder main notes&#x2026; is main a good name?</a></li>
+<li><a href="#org57ae9cb">1.2. <span class="done DONE">DONE</span> Move org/roam to google drive</a></li>
+<li><a href="#orgc1add4d">1.3. <span class="todo TODO">TODO</span> Setup structure on dell laptop</a></li>
+<li><a href="#orga7d35ea">1.4. <span class="todo TODO">TODO</span> Now I've forgotten what to capture</a></li>
+<li><a href="#org6cf772b">1.5. <span class="todo TODO">TODO</span> Remove heading numbers for some org files</a></li>
+<li><a href="#org14b2574">1.6. <span class="todo TODO">TODO</span> Update project flows for next actions, these help generate momentum</a></li>
+<li><a href="#org3ee276a">1.7. <span class="todo TODO">TODO</span> just like reference capture, create permanent notes capture</a></li>
+<li><a href="#org72c24d3">1.8. <span class="todo TODO">TODO</span> Find a Grammarly or equivalent english checker. This will help you communicate efficiently</a></li>
+<li><a href="#org4a41321">1.9. <span class="todo TODO">TODO</span> Music studio setup project</a></li>
+<li><a href="#org5313e27">1.10. <span class="todo TODO">TODO</span> Learn Emacs-lisp</a></li>
+<li><a href="#orgdd2fddd">1.11. <span class="todo TODO">TODO</span> Make q exit and kill buffer rather then having it straggle in the background</a></li>
+<li><a href="#org771a756">1.12. <span class="todo TODO">TODO</span> Capture OKRs in term of questions</a></li>
+<li><a href="#orgc1b6f67">1.13. <span class="todo TODO">TODO</span> Find a good capturing app for videos and podcasts, web clippings and such. The stuff Zotero won't capture efficiently</a></li>
+<li><a href="#org7bf3d7e">1.14. <span class="todo TODO">TODO</span> Fix org-roam-capture for projects</a></li>
+<li><a href="#org7fae942">1.15. <span class="todo TODO">TODO</span> Checking if org capture todo works?</a></li>
+<li><a href="#org6c9256c">1.16. <span class="todo TODO">TODO</span> Update emacs to be light or dark depending on the time of day</a></li>
+<li><a href="#org1833f66">1.17. <span class="todo TODO">TODO</span> Fix Org Agenda to show file or title&#x2026; maybe just change the heading to be more descriptive</a></li>
+<li><a href="#org5d9d661">1.18. <span class="todo TODO">TODO</span> Bidirectional PDF annotations in Emacs/Zotero</a></li>
+<li><a href="#orgd7291e9">1.19. <span class="todo TODO">TODO</span> Rename permanent notes to zettels, since it sounds like petals and reminds you of branches</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1828b13" class="outline-2">
+<h2 id="org1828b13"><span class="section-number-2">1</span> Capture Tasks</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org9773bdc" class="outline-3">
+<h3 id="org9773bdc"><span class="section-number-3">1.1</span> <span class="done DONE">DONE</span> Methodology to add placeholder main notes&#x2026; is main a good name?</h3>
+</div>
+<div id="outline-container-org57ae9cb" class="outline-3">
+<h3 id="org57ae9cb"><span class="section-number-3">1.2</span> <span class="done DONE">DONE</span> Move org/roam to google drive</h3>
+</div>
+<div id="outline-container-orgc1add4d" class="outline-3">
+<h3 id="orgc1add4d"><span class="section-number-3">1.3</span> <span class="todo TODO">TODO</span> Setup structure on dell laptop</h3>
+</div>
+<div id="outline-container-orga7d35ea" class="outline-3">
+<h3 id="orga7d35ea"><span class="section-number-3">1.4</span> <span class="todo TODO">TODO</span> Now I've forgotten what to capture</h3>
+</div>
+<div id="outline-container-org6cf772b" class="outline-3">
+<h3 id="org6cf772b"><span class="section-number-3">1.5</span> <span class="todo TODO">TODO</span> Remove heading numbers for some org files</h3>
+</div>
+<div id="outline-container-org14b2574" class="outline-3">
+<h3 id="org14b2574"><span class="section-number-3">1.6</span> <span class="todo TODO">TODO</span> Update project flows for next actions, these help generate momentum</h3>
+</div>
+<div id="outline-container-org3ee276a" class="outline-3">
+<h3 id="org3ee276a"><span class="section-number-3">1.7</span> <span class="todo TODO">TODO</span> just like reference capture, create permanent notes capture</h3>
+</div>
+<div id="outline-container-org72c24d3" class="outline-3">
+<h3 id="org72c24d3"><span class="section-number-3">1.8</span> <span class="todo TODO">TODO</span> Find a Grammarly or equivalent english checker. This will help you communicate efficiently</h3>
+</div>
+<div id="outline-container-org4a41321" class="outline-3">
+<h3 id="org4a41321"><span class="section-number-3">1.9</span> <span class="todo TODO">TODO</span> Music studio setup project</h3>
+</div>
+<div id="outline-container-org5313e27" class="outline-3">
+<h3 id="org5313e27"><span class="section-number-3">1.10</span> <span class="todo TODO">TODO</span> Learn Emacs-lisp</h3>
+</div>
+<div id="outline-container-orgdd2fddd" class="outline-3">
+<h3 id="orgdd2fddd"><span class="section-number-3">1.11</span> <span class="todo TODO">TODO</span> Make q exit and kill buffer rather then having it straggle in the background</h3>
+</div>
+<div id="outline-container-org771a756" class="outline-3">
+<h3 id="org771a756"><span class="section-number-3">1.12</span> <span class="todo TODO">TODO</span> Capture OKRs in term of questions</h3>
+</div>
+<div id="outline-container-orgc1b6f67" class="outline-3">
+<h3 id="orgc1b6f67"><span class="section-number-3">1.13</span> <span class="todo TODO">TODO</span> Find a good capturing app for videos and podcasts, web clippings and such. The stuff Zotero won't capture efficiently</h3>
+</div>
+<div id="outline-container-org7bf3d7e" class="outline-3">
+<h3 id="org7bf3d7e"><span class="section-number-3">1.14</span> <span class="todo TODO">TODO</span> Fix org-roam-capture for projects</h3>
+</div>
+<div id="outline-container-org7fae942" class="outline-3">
+<h3 id="org7fae942"><span class="section-number-3">1.15</span> <span class="todo TODO">TODO</span> Checking if org capture todo works?</h3>
+</div>
+<div id="outline-container-org6c9256c" class="outline-3">
+<h3 id="org6c9256c"><span class="section-number-3">1.16</span> <span class="todo TODO">TODO</span> Update emacs to be light or dark depending on the time of day</h3>
+</div>
+<div id="outline-container-org1833f66" class="outline-3">
+<h3 id="org1833f66"><span class="section-number-3">1.17</span> <span class="todo TODO">TODO</span> Fix Org Agenda to show file or title&#x2026; maybe just change the heading to be more descriptive</h3>
+</div>
+<div id="outline-container-org5d9d661" class="outline-3">
+<h3 id="org5d9d661"><span class="section-number-3">1.18</span> <span class="todo TODO">TODO</span> Bidirectional PDF annotations in Emacs/Zotero</h3>
+</div>
+<div id="outline-container-orgd7291e9" class="outline-3">
+<h3 id="orgd7291e9"><span class="section-number-3">1.19</span> <span class="todo TODO">TODO</span> Rename permanent notes to zettels, since it sounds like petals and reminds you of branches</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-04-07 Sun 19:23</p>
+</div>
+</body>
+</html>

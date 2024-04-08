@@ -1,7 +1,7 @@
 (require 'ox-publish)
 (setq org-publish-project-alist
       '(("org-notes"
-         :base-directory "./org"
+         :base-directory "../"
          :base-extension "org"
          :publishing-directory "."
          :recursive t
