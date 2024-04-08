@@ -6,10 +6,11 @@
          :publishing-directory "."
          :recursive t
          :publishing-function org-html-publish-to-html
-         :headline-levels 2             ; Just the default for this project.
-         :auto-sitemap t                ; Generate sitemap.org automagically...
-         :sitemap-filename "./sitemap.org"  ; ... call it sitemap.org (it's the default)...
-         :sitemap-title "Sitemap"         ; ... with title 'Sitemap'.
+         :headline-levels 2                ; Just the default for this project.
+         :auto-sitemap t                   ; Generate sitemap.org automagically...
+         :sitemap-filename "./sitemap.org" ; ... call it sitemap.org (it's the default)...
+         :sitemap-title "Sitemap"          ; ... with title 'Sitemap'.
+         :with-toc nil                     ; Do not include a table of contents
          :auto-preamble t)
 
         ("org-static"
