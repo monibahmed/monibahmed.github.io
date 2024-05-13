@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-05-13 Mon 04:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kurt, Will - Get Programming with Haskell</title>
+<meta name="generator" content="Org mode" />
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Kurt, Will - Get Programming with Haskell</h1>
+<p>
+:ID:       4C466A32-1D62-4F3D-9315-1548B7181C1F
+:ROAM<sub>REFS</sub>: @kurtGetProgrammingHaskell2018
+</p>
+
+<div id="outline-container-org755f85d" class="outline-2">
+<h2 id="org755f85d"><span class="section-number-2">1</span> SCOPE Haskell Programming</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Getting Started with Haskell Using:
+</p>
+<ul class="org-ul">
+<li>Functions</li>
+<li>Types</li>
+<li>Contexts</li>
+<li>Code Organization</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orga5816c6" class="outline-2">
+<h2 id="orga5816c6"><span class="section-number-2">2</span> Reference Notes</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+All Haskell programs are compiled so you need to have a main. Simple stuff with other programs languages is harder to do in Haskell. For example I/O in Haskell is a fairly advanced topic, even ad-hoc debugging is usually impossible. Using print statements is Haskell is not the correct way to debug. However after you gain experience, you'll get to be obsessed with correctness, and work as you expect.
+</p>
+
+<p>
+Using the compiler for correctness, and using types to mathematically reason out programs that will work as expected. If you can guarantee correct construction at compile time, it's an efficiency increase. Writing modular code is recommended in most languages but in Haskell it's essential for writing code and troubleshooting it.
+</p>
+</div>
+
+<div id="outline-container-orge31b522" class="outline-3">
+<h3 id="orge31b522"><span class="section-number-3">2.1</span> Functional Programming</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+In imperative programming you provides a sequence of instruction to a computer in order to make it behave a certain way. In functional programming, you use more mathematical notions of computation to solve a problem.
+</p>
+
+<p>
+Let's start with a function \(f\), which takes a parameter \(x\) and maps it a value \(y\). \[ f(x) = y \] 
+</p>
+
+<p>
+Function in Haskell must three rules:
+</p>
+<ol class="org-ol">
+<li>All functions must take an argument</li>
+<li>All functions must return a value</li>
+<li>Every time a function is executed with the same argument, it must return the same value. (Referential Transparency)</li>
+</ol>
+
+<p>
+Lambda calculus represents everything as functions, true and false are functions, even all integers can be represented as functions. As everything is a function, this makes mathematics a sound model for programming. If you can mathematically prove out your abstractions, you can eliminate a whole class of bugs. You are essentially programming in mathematics, with can be proven with equal signs. Programs are safe when you expect them to behave exactly the way you reason about them. Mathematics doesn't allow you to change states of other variables, in other programming languages you can change the state of other variables, this makes it hard to reason about code.
+</p>
+
+<p>
+For example reverse(), this can behave differently based on different programming languages. Haskell doesn't allow side-effects, all Haskell functions only take arguments and return values. Does reverse() change the list in the variable, or does it return a reversed list or does it return None? Haskell functions leads to code that is dramatically easier to predict behavior.
+</p>
+
+<p>
+Haskell thinks about variables as definitions, variables in programming is to clarify your code and avoid repetition. You can't change the definition of a variable once assigned.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell">calChange owed given = if change &gt; 0
+  then change
+  else 0
+  where change = given - owed
+
+calChange 20 10
+</pre>
+</div>
+
+<p>
+Notice that a where clause lets you control the scope of variables.
+</p>
+
+<p>
+If you use the GHCi interpreter does allow you to reassign variable.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8d2a484" class="outline-3">
+<h3 id="org8d2a484"><span class="section-number-3">2.2</span> Lambda Functions, Partial Applications and Closures</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+In Haskell, you can define functions without a name, call Lambda Functions. Lambda functions are the minimum possible function, they take a value and return a value, that's all. Essentiall they are used once, in a single context. Lambda function are useful but exist only for a short whiles
+</p>
+
+<p>
+Because Haskell is based on Lambda Calculus, there is a recurring theme that you can build up everything if you wanted. Lambda functions are an expression, a self-contained piece of code, all on its own. You can use overwrite variables using Lambda Functions.
+</p>
+
+<p>
+Whenever you create a new function, you create a new scope, which is the context in which the scope in which the variable is defined. You can also use Lambda Functions as arguments.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell">ifEven f x = if even x
+  then f x
+  else x
+
+inc n = n + 1
+double n = n * 2
+square n = n ** 2
+
+ifEvenInc n = ifEven inc n
+ifEvenTriple n = ifEven (\x -&gt; x * 3) n 
+</pre>
+</div>
+
+<p>
+You get to reuse functions that already exist and are available. You can also define functions to pass in as arguments. You can also create closures to capture the function getting passed in.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-haskell">genIfEven f = (\x -&gt; ifEven f x)
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb84e56e" class="outline-3">
+<h3 id="orgb84e56e"><span class="section-number-3">2.3</span> First-Class Functions</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Function in Haskell, just like in mathematics, can be passed around like other values. Function can be used as arguments and be returned as values from other functions. Having the ability to pass functions around makes it easier to perform the desired behavior.
+</p>
+</div>
+</div>
+<div id="outline-container-org81a409b" class="outline-3">
+<h3 id="org81a409b"><span class="section-number-3">2.4</span> Returning Functions</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Functions can also be returned from other functions.
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell">
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcb82d42" class="outline-3">
+<h3 id="orgcb82d42"><span class="section-number-3">2.5</span> Operator Precedence</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+Functions are always evaluated first, then operators, this avoids having to use a large number of parentheses. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5bbda15" class="outline-2">
+<h2 id="org5bbda15"><span class="section-number-2">3</span> </h2>
+</div>
+
+<div id="outline-container-org5ad3c8d" class="outline-2">
+<h2 id="org5ad3c8d"><span class="section-number-2">4</span> References</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+[cite:@kurtGetProgrammingHaskell2018]
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-05-13 Mon 04:00</p>
+</div>
+</body>
+</html>
