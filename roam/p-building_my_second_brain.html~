@@ -6,32 +6,33 @@
 <!-- 2024-05-13 Mon 04:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>- Clash.Tutorial</title>
+<title>Building My Second Brain</title>
 <meta name="generator" content="Org mode" />
 </head>
 <body>
 <div id="content">
-<h1 class="title">- Clash.Tutorial</h1>
+<h1 class="title">Building My Second Brain</h1>
 <p>
-:ID:       68430642-E378-49D9-BCE8-2AE3C02A740A
-:ROAM<sub>REFS</sub>: @ClashTutorial
+:ID:       23E6DB6D-DFA5-4EFD-879F-9473A7B3D87D
 </p>
 
-<div id="outline-container-org542222c" class="outline-2">
-<h2 id="org542222c"><span class="section-number-2">1</span> SCOPE How do you development Hardware in Clash</h2>
+<div id="outline-container-org58acd47" class="outline-2">
+<h2 id="org58acd47"><span class="section-number-2">1</span> SCOPE Using Digital Tools can I Build a Mirror of my Brain?</h2>
 <div class="outline-text-2" id="text-1">
-<p>
-Using Haskell and Clash to develop hardware gets you a big gain in productivity
-</p>
 </div>
 </div>
 
 
-<div id="outline-container-orgbc45cc5" class="outline-2">
-<h2 id="orgbc45cc5"><span class="section-number-2">2</span> References</h2>
+<div id="outline-container-org04acfa3" class="outline-2">
+<h2 id="org04acfa3"><span class="section-number-2">2</span> References</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-[cite:@ClashTutorial]
+[cite:@HowUseFolgezettel2023]
+[cite:@25EmotionalIntelligence2022]
+</p>
+
+<p>
+[cite:@ClashTutorialPdf; @bradberryEmotionalIntelligence; @digitalsNewClashFPGA2020]
 </p>
 </div>
 </div>
