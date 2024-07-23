@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-07-23 Tue 21:23 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Embedded Programming with Rust and Microbit</title>
+<meta name="generator" content="Org mode" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">Embedded Programming with Rust and Microbit</h1>
+<p>
+:ID:       b1a40edc-d9ed-4ae4-a275-4795496a886a
+</p>
+
+<div id="outline-container-org3dfc027" class="outline-2">
+<h2 id="org3dfc027"><span class="section-number-2">1</span> Work through Rust Embedded Book</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+
+<div id="outline-container-orgd1035cb" class="outline-3">
+<h3 id="orgd1035cb"><span class="section-number-3">1.1</span> Setup</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org9665579"></a>How do I fix this error:<br />
+<div class="outline-text-4" id="text-1-1-1">
+<div class="org-src-container">
+<pre class="src src-rust">
+Finished `dev` profile [unoptimized + debuginfo] target(s) in 9.43s
+Config default
+Target C:\Users\mahmed6\discovery\microbit\target\thumbv7em-none-eabihf\debug\rtt-check
+ Error The following devices were found:
+	[0]: BBC micro:bit CMSIS-DAP -- 0d28:0204:99063602000528204BC592478EC634A1000000006E052820 (CMSIS-DAP)
+       [1]: CMSIS-DAP v1 -- 0d28:0204:99063602000528204bc592478ec634a1000000006e052820 (CMSIS-DAP)
+	Use '--probe VID:PID'
+	You can also set the [default.probe] config attribute (in your Embed.toml) to select which probe to use. For usage examples see https://github.com/probe-rs/probe-rs/blob/master/probe-rs-tools/src/bin/probe-rs/cmd/cargo_embed/config/default.toml .
+</pre>
+</div>
+
+<p>
+The error is saying that there are multiple devices (probes) detected by the system, and it's not clear which one should be used for debugging. You have two ways to resolve this:
+</p>
+
+<ol class="org-ol">
+<li>Use the <code>--probe</code> option with the <code>VID:PID</code> of the desired probe when running your command. The <code>VID:PID</code> values can be found in the error message, and it should follow the format <code>0d28:0204</code>. For example:
+cargo embed &#x2013;probe 0d28:0204</li>
+<li><p>
+Alternatively, you can set the <code>default.probe</code> config attribute in your <code>Embed.toml</code> file with the <code>VID:PID</code> of your probe. The <code>Embed.toml</code> file would look something like this:
+</p>
+
+<p>
+[default]
+probe = "0d28:0204"
+</p></li>
+</ol>
+
+<p>
+Remember to replace <code>"0d28:0204"</code> with your chosen <code>VID:PID</code>. Once you make this change and save it, future commands won't require <code>--probe VID:PID</code> argument and will use specified probe by default.
+</p>
+
+
+
+<p>
+Ok, now I am seeing this:
+</p>
+<pre class="example">
+
+Target C:\Users\mahmed6\discovery\microbit\target\thumbv7em-none-eabihf\debug\rtt-check
+ WARN probe_rs::architecture::arm::memory::romtable: Component at 0xe0001000: CIDR0 has invalid preamble (expected 0xd, got 0x0)
+ WARN probe_rs::architecture::arm::memory::romtable: Component at 0xe0001000: CIDR2 has invalid preamble (expected 0x5, got 0x0)
+ WARN probe_rs::architecture::arm::memory::romtable: Component at 0xe0001000: CIDR3 has invalid preamble (expected 0xb1, got 0x0)
+ WARN probe_rs::architecture::arm::memory::romtable: Component at 0xe0000000: CIDR0 has invalid preamble (expected 0xd, got 0xb1)
+ WARN probe_rs::architecture::arm::memory::romtable: Component at 0xe0000000: CIDR1 has invalid preamble (expected 0x0, got 0x1)
+ WARN probe_rs::architecture::arm::memory::romtable: Component at 0xe0000000: CIDR2 has invalid preamble (expected 0x5, got 0xb1)
+ WARN probe_rs::architecture::arm::memory::romtable: Component at 0xe0040000: CIDR0 has invalid preamble (expected 0xd, got 0x0)
+ WARN probe_rs::architecture::arm::memory::romtable: Component at 0xe0040000: CIDR2 has invalid preamble (expected 0x5, got 0x0)
+ WARN probe_rs::architecture::arm::memory::romtable: Component at 0xe0040000: CIDR3 has invalid preamble (expected 0xb1, got 0x0)
+       Error failed attaching to target
+
+	     Caused by:
+		 0: Unable to load specification for chip
+		 1: The connected chip could not automatically be determined.
+</pre>
+
+
+
+<p>
+The error message shows that the system is unable to discern the type of chip connected to it, giving a series of warnings about invalid preamble values in ROMTable Component Integrated Device Resource (CIDR) records.
+</p>
+
+<p>
+Here are few things you might want to check:
+</p>
+
+<ol class="org-ol">
+<li>Check whether the hardware is properly connected and powered on.</li>
+<li>Ensure that the correct softdevice and toolchain are installed.</li>
+<li>Update your probe-rs library as they have slightly better error messages in newer versions.</li>
+<li>Review the exact microbit model (v1, v2, etc.) and match it with the target specification in your configuration files.</li>
+<li>Try specifying the chip explicitly in your debugging/programming command if possible.</li>
+</ol>
+
+<p>
+Remember that advice is based on the provided error message, without context about the code and exact hardware setup more precise guidance might not be possible.  
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgf26f9c3" class="outline-3">
+<h3 id="orgf26f9c3"><span class="section-number-3">1.2</span> The MICROBIT:V2 Hardware</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Microcontroller Unit is the part that runs your code</li>
+<li>Has an Megnetometer and a Accelerometer</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8d11a19" class="outline-3">
+<h3 id="org8d11a19"><span class="section-number-3">1.3</span> Terminology</h3>
+<div class="outline-text-3" id="text-1-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Peripheral Access Crate</td>
+<td class="org-left">Safe direct interface to the peripherals of the chip. Usually other layers interact with PAC</td>
+</tr>
+
+<tr>
+<td class="org-left">Hardware Abstraction Layer</td>
+<td class="org-left">Provides an abstraction for the various peripherals</td>
+</tr>
+
+<tr>
+<td class="org-left">Board Support Crate</td>
+<td class="org-left">Abstract the whole board providing access to its features, used on top of HAL</td>
+</tr>
+
+<tr>
+<td class="org-left">Embedded HAL</td>
+<td class="org-left">Provide a set of traits that describe behavior which is common across specified HALs</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org6b2a18c" class="outline-2">
+<h2 id="org6b2a18c"><span class="section-number-2">2</span> References</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="https://docs.rust-embedded.org/discovery/microbit/">https://docs.rust-embedded.org/discovery/microbit/</a>
+<a href="https://tech.microbit.org/hardware/">https://tech.microbit.org/hardware/</a>
+<a href="https://www.youtube.com/watch?v=vLYit_HHPaY">https://www.youtube.com/watch?v=vLYit_HHPaY</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-07-23 Tue 21:23</p>
+</div>
+</body>
+</html>
